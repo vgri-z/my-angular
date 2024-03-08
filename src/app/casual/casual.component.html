@@ -1,0 +1,32 @@
+<!-- <h2 (click)="titleClick($event, 'title')">this is casual</h2>
+
+<div
+  class="wrapper"
+  [style.width.px]="200"
+  [style.height]="'200px'"
+  style="background-color: aquamarine"
+  (click)="wrapperClick()"
+>
+  <div
+    class="inner"
+    [style.width.px]="100"
+    [style.height]="'100px'"
+    style="background-color: lime"
+    (click)="innerClick($event)"
+  ></div>
+</div>
+
+<input type="text" (keydown)="inputDown($event)" /> -->
+
+<p-dialog header="Header" [(visible)]="visible" [modal]="true">
+  <ng-template pTemplate="header">
+    <div class="inline-flex align-items-center justify-content-center gap-2">
+      <span class="font-bold white-space-nowrap">{{ title }}</span>
+    </div>
+  </ng-template>
+  <h2>this is dialog content</h2>
+  <ng-template pTemplate="footer">
+    <p-button [label]="cancelText" (click)="confirm('vgri')"></p-button>
+    <p-button [label]="confirmText" (click)="cancel()"></p-button>
+  </ng-template>
+</p-dialog>

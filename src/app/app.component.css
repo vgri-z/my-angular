@@ -1,12 +1,10 @@
 .title {
   color: lime;
 }
-
 tr,
 td {
   border: 1px solid;
 }
-
 .text {
   color: red;
 }

@@ -1,0 +1,24 @@
+<!-- <p-button label="+" (click)="inc()"></p-button>
+<p-button label="-" (click)="dec()"></p-button>
+<div [style.fontSize.px]="size">this is app-sizer</div>
+<div>fontSize: {{ size }}</div> -->
+
+<!-- 表单的双向绑定 -->
+<!-- <input type="text" [value]="inputValue" (input)="inputChange($event)" /> -->
+<div>{{ inputValue }}</div>
+
+<form>
+  <!-- <input type="text" [(ngModel)]="inputValue" name="name" /> -->
+  <!-- <input
+    type="text"
+    [(ngModel)]="inputValue"
+    [ngModelOptions]="{ standalone: true }"
+  /> -->
+
+  <input
+    type="text"
+    [ngModel]="inputValue"
+    (ngModelChange)="inputValue = $event"
+    name="name"
+  />
+</form>

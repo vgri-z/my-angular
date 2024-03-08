@@ -1,0 +1,17 @@
+<p-button label="changeShow" (click)="isShow = !isShow"></p-button>
+
+<h2 *ngIf="isShow; else elseBlock">
+  this is if component, this h2 can be show when isShow is true
+</h2>
+
+<ng-template #otherBlock>
+  <h2>this is if component, this h2 can be show when isShow is false</h2>
+</ng-template>
+
+<!-- <ng-template [ngIf]="isShow" [ngIfElse]="elseBlock">
+  <h2>this is if component, this h2 can be show when isShow is true</h2>
+</ng-template>
+
+<ng-template #elseBlock>
+  <h2>this is if component, this h2 can be show when isShow is false</h2>
+</ng-template> -->
