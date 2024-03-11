@@ -1,0 +1,31 @@
+<div class="operates">
+  <input
+    type="text"
+    pInputText
+    [(ngModel)]="bookName"
+    (keyup.enter)="addBook()"
+  />
+  <p-button label="add" (click)="addBook()"></p-button>
+  <p-button label="reset" (click)="resetList()"></p-button>
+</div>
+
+<div class="books">
+  <h3
+    *ngFor="
+      let item of books;
+      index as i;
+      count as count;
+      even as even;
+      let od = odd;
+      let first = first;
+      let last = last;
+      trackBy: trackByFunc
+    "
+    [class.even]="even"
+    [class.odd]="od"
+  >
+    {{ i + 1 }}-{{ item.name }}-{{ even }}-{{ od }}-{{ count }}-{{ first }}-{{
+      last
+    }}
+  </h3>
+</div>

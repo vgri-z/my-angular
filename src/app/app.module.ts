@@ -10,9 +10,19 @@ import { DialogModule } from 'primeng/dialog';
 import { SizerComponent } from './sizer/sizer.component';
 import { FormsModule } from '@angular/forms';
 import { IfComponent } from './if/if.component';
+import { SwitchComponent } from './switch/switch.component';
+import { ForComponent } from './for/for.component';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
-  declarations: [AppComponent, CasualComponent, SizerComponent, IfComponent],
+  declarations: [
+    AppComponent,
+    CasualComponent,
+    SizerComponent,
+    IfComponent,
+    SwitchComponent,
+    ForComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,6 +30,7 @@ import { IfComponent } from './if/if.component';
     DialogModule,
     BrowserAnimationsModule,
     FormsModule,
+    InputTextModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

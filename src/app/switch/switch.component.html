@@ -1,0 +1,49 @@
+<div>
+  <input
+    type="radio"
+    name="framework"
+    value="angular"
+    id="angular"
+    [(ngModel)]="framework"
+  />
+  <label for="angular">angular</label>
+</div>
+<div>
+  <input
+    type="radio"
+    name="framework"
+    value="vue"
+    id="vue"
+    [(ngModel)]="framework"
+  />
+  <label for="vue">vue</label>
+</div>
+<div>
+  <input
+    type="radio"
+    name="framework"
+    value="react"
+    id="react"
+    [(ngModel)]="framework"
+  />
+  <label for="react">react</label>
+</div>
+<div>
+  <input
+    type="radio"
+    name="framework"
+    value="none"
+    id="none"
+    [(ngModel)]="framework"
+  />
+  <label for="none">none</label>
+</div>
+
+<h2>{{ framework }}</h2>
+
+<div [ngSwitch]="framework">
+  <h2 *ngSwitchCase="'angular'">angular</h2>
+  <h2 *ngSwitchCase="'vue'">vue</h2>
+  <h2 *ngSwitchCase="'react'">react</h2>
+  <h2 *ngSwitchDefault="'none'">none</h2>
+</div>
