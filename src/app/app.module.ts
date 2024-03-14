@@ -13,6 +13,8 @@ import { IfComponent } from './if/if.component';
 import { SwitchComponent } from './switch/switch.component';
 import { ForComponent } from './for/for.component';
 import { InputTextModule } from 'primeng/inputtext';
+import { TplVarComponent } from './tpl-var/tpl-var.component';
+import { TplOperatorsComponent } from './tpl-operators/tpl-operators.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { InputTextModule } from 'primeng/inputtext';
     IfComponent,
     SwitchComponent,
     ForComponent,
+    TplVarComponent,
+    TplOperatorsComponent,
   ],
   imports: [
     BrowserModule,

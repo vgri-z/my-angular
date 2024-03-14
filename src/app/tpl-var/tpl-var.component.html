@@ -1,0 +1,18 @@
+<!-- 在表单使用 -->
+<div>
+  <input
+    #username
+    type="text"
+    pInputText
+    [(ngModel)]="name"
+    placeholder="username"
+  />
+  <h4>{{ name }}</h4>
+  <p-button label="click" (click)="showName(username.value)"></p-button>
+</div>
+
+<!-- 在组件上使用 -->
+<div>
+  <p-button label="addSize" (click)="sizeCpn.inc()"></p-button>
+  <app-sizer #sizeCpn [(size)]="size"></app-sizer>
+</div>
