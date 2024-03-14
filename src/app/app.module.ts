@@ -15,6 +15,8 @@ import { ForComponent } from './for/for.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { TplVarComponent } from './tpl-var/tpl-var.component';
 import { TplOperatorsComponent } from './tpl-operators/tpl-operators.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { TplOperatorsComponent } from './tpl-operators/tpl-operators.component';
     ForComponent,
     TplVarComponent,
     TplOperatorsComponent,
+    HighlightDirective,
+    StructuralDirectivesComponent,
   ],
   imports: [
     BrowserModule,
