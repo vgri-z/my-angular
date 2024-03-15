@@ -1,1 +1,144 @@
-<p>structural-directives works!</p>
+<!-- ngIf -->
+<div>
+  <p-button label="toggle" (click)="show = !show"></p-button>
+  <!-- ngIf的基本使用 -->
+  <h3 *ngIf="show as s">测试ngIf - {{ s }}</h3>
+  <!-- ngIf展开写法 -->
+  <ng-template [ngIf]="show" let-s>
+    <h3>ngIf展开 {{ s }}</h3>
+  </ng-template>
+  ------------------------------------ngIf
+</div>
+
+<!-- ngSwitch -->
+<div>
+  <!-- ngSwitch基本使用 -->
+  <!-- <div [ngSwitch]="bookName">
+    <h3 *ngSwitchCase="'活着'">《活着》</h3>
+    <h3 *ngSwitchCase="'百年孤独'">《百年孤独》</h3>
+    <h3 *ngSwitchCase="'兄弟'">《兄弟》</h3>
+    <h3 *ngSwitchDefault>《动物农场》</h3>
+  </div> -->
+
+  <!-- ngSwitch展开写法 -->
+  <div [ngSwitch]="bookName">
+    <ng-template [ngSwitchCase]="'活着'">
+      <h3>《活着》</h3>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'百年孤独'">
+      <h3>《百年孤独》</h3>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'兄弟'">
+      <h3>《兄弟》</h3>
+    </ng-template>
+    <ng-template [ngSwitchDefault]>
+      <h3>《动物农场》</h3>
+    </ng-template>
+  </div>
+  ------------------------------------ngSwitch
+</div>
+
+<!-- ngFor -->
+<div>
+  <!-- ngFor基本使用 -->
+  <!-- <div class="books">
+    <h3
+      *ngFor="
+        let item of books;
+        index as i;
+        count as count;
+        let first = first;
+        let last = last;
+        let even = even;
+        let od = odd;
+        trackBy: trackByFunction
+      "
+    >
+      {{ i }}-{{ item }}-{{ count }}-{{ first }}-{{ last }}-{{ even }}-{{ od }}
+    </h3>
+  </div> -->
+
+  <!-- ngFor展开写法 -->
+  <!-- <div class="books">
+    <ng-template
+      ngFor
+      [ngForOf]="books"
+      let-item
+      [ngForTrackBy]="trackByFunction"
+      let-i="index"
+      let-c="count"
+      let-f="first"
+      let-l="last"
+      let-e="even"
+      let-o="odd"
+    >
+      <h3>{{ i }}-{{ item }}-{{ c }}-{{ e }}-{{ o }}-{{ f }}-{{ l }}</h3>
+    </ng-template>
+  </div> -->
+</div>
+
+<!-- ng-template https://angular.cn/api/core/ng-template -->
+<!-- angular的ng-template定义了一个默认不渲染任何内容的模板，如果你只是在ng-template中包装元素而不应用结构型指令，则不会渲染这些元素 -->
+<div>can show</div>
+<ng-template>
+  <!-- 如果你不在ng-template元素上使用任何结构型指令，那么他包装的内容不会显示 -->
+  <div>not show</div>
+</ng-template>
+<div>can show</div>
+
+<!-- ng-container https://angular.cn/api/core/ng-container -->
+<!-- 一种特殊元素，可以在DOM不添加任何元素的情况下承载结构型指令，有点类似于vue的template元素，在vue中，一般使用v-for与v-if都使用template元素承载 -->
+<div>
+  <!-- 现在需要不显示2和3，你可以分别对23使用ngIf指令，也可用一个div包裹23，再对这个div使用ngIf指令，但是都需要修改DOM -->
+  <!-- <div>1</div>
+  <div *ngIf="false">2</div>
+  <div *ngIf="false">3</div>
+  <div>4</div> -->
+
+  <!-- <div>1</div>
+  <div *ngIf="false">
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <div>4</div> -->
+
+  <!-- 使用ng-container -->
+  <div>1</div>
+  <ng-container *ngIf="false">
+    <div>2</div>
+    <div>3</div>
+  </ng-container>
+  <div>4</div>
+</div>
+
+<!-- 组合多个结构型指令 -->
+<!-- angular中不能再同一个DOM上使用多个结构型指令，如果你想这么弄，建议给每一个结构型指令添加一个ng-container，就类似于vue如果想
+  要在一个元素上使用多个结构型指令，可以给每一个结构型指令添加一个template元素 -->
+<!-- <ul>
+  <li *ngFor="let item of books" *ngIf="item.length > 2">
+    {{ item.name }}
+  </li>
+</ul> -->
+
+<ul>
+  <ng-container *ngFor="let item of books">
+    <ng-container *ngIf="item.length > 2"> {{ item }}</ng-container>
+  </ng-container>
+</ul>
+
+<!-- 自定义结构型指令 -->
+<p-button label="toggle" (click)="isShow = !isShow"></p-button>
+<!-- 使用let定义局部变量 -->
+<h2 *appUnless="isShow; let s; let n = name">
+  这是一段自定义结构型指令的测试文字 -- {{ s }} -- {{ n }}
+</h2>
+
+<!-- 使用as定义局部变量 -->
+
+<h2 *appUnless="isShow as s; name as n">
+  这是一段自定义结构型指令的测试文字 -- {{ s }} -- {{ n }}
+</h2>
+
+<ng-template [appUnless]="isShow" let-s let-n="name">
+  <h2>这是一段自定义结构型指令的测试文字 -- {{ s }} -- {{ n }}</h2>
+</ng-template>

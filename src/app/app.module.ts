@@ -17,6 +17,9 @@ import { TplVarComponent } from './tpl-var/tpl-var.component';
 import { TplOperatorsComponent } from './tpl-operators/tpl-operators.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
+import { ReviewComponent } from './review/review.component';
+import { ReviewDirective } from './directives/review.directive';
+import { UnlessDirective } from './directives/unless.directive';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import { StructuralDirectivesComponent } from './structural-directives/structura
     TplOperatorsComponent,
     HighlightDirective,
     StructuralDirectivesComponent,
+    ReviewComponent,
+    ReviewDirective,
+    UnlessDirective,
   ],
   imports: [
     BrowserModule,
