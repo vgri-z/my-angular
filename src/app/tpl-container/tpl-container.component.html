@@ -1,0 +1,45 @@
+<!--
+  TemplateRef是一个内嵌模板，用于实例化内前视图
+  EmbeddedViewRef是一个视图对象，可以将其添加到视图容器当中
+  ViewCOntainerRef是一个视图容器，这里面可以有视图，也可以有其他的视图容器
+ -->
+
+<!-- 如何不使用结构型指令，将ngTemplate元素包装的内容渲染到页面上 -->
+<p-button label="insert second" (click)="insert(secondTpl)"></p-button>
+<p-button label="insert third" (click)="insert(thirdTpl)"></p-button>
+<p-button label="insert fourth" (click)="insert(fourthTpl)"></p-button>
+<p-button label="insert all" (click)="insertAll()"></p-button>
+<p-button label="get one" (click)="getOne()"></p-button>
+<p-button label="insert free" (click)="insertFree()"> </p-button>
+<p-button label="get index" (click)="getIndex()"> </p-button>
+<p-button label="move" (click)="move()"></p-button>
+<p-button label="move2To4" (click)="move2To4()"></p-button>
+<p-button label="move2ToCasual" (click)="move2ToCasual()"></p-button>
+<h2>templateRef length: {{ firstContain?.length }}</h2>
+
+<ng-template #firstTpl>
+  <div>第一段模板内容</div>
+</ng-template>
+<div #divBox></div>
+
+<ng-template #secondTpl>
+  <p>第二段template</p>
+</ng-template>
+
+<ng-template #thirdTpl>
+  <p>第三段template</p>
+</ng-template>
+
+<ng-template #fourthTpl>
+  <p>第四段template</p>
+</ng-template>
+
+<ng-template #freeTpl let-def let-fr="free">
+  <p>自由的template--free-{{ fr }}--default-{{ def }}</p>
+</ng-template>
+
+<ng-container #firstContainer></ng-container>
+
+<div>----------------------------------------</div>
+
+<ng-container #secondContainer></ng-container>
