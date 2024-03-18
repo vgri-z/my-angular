@@ -37,6 +37,8 @@ export class TplContainerComponent implements OnInit, AfterViewInit {
   @ViewChild('secondContainer', { read: ViewContainerRef })
   readonly secondContainer: ViewContainerRef | undefined;
 
+  show = false;
+
   freeViewRef: EmbeddedViewRef<any> | undefined;
   ngOnInit(): void {}
 
