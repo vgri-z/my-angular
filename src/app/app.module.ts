@@ -21,6 +21,7 @@ import { ReviewComponent } from './review/review.component';
 import { ReviewDirective } from './directives/review.directive';
 import { UnlessDirective } from './directives/unless.directive';
 import { TplContainerComponent } from './tpl-container/tpl-container.component';
+import { TplOutletComponent } from './tpl-outlet/tpl-outlet.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { TplContainerComponent } from './tpl-container/tpl-container.component';
     ReviewDirective,
     UnlessDirective,
     TplContainerComponent,
+    TplOutletComponent,
   ],
   imports: [
     BrowserModule,

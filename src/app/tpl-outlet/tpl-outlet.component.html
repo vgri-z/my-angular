@@ -1,0 +1,25 @@
+<!-- NgTemplateOutlet：将一段提前准备好的TemplateRef插入到一个内前视图 -->
+
+<ng-container
+  [ngTemplateOutlet]="renderTpl || defaultTpl"
+  [ngTemplateOutletContext]="myContext"
+></ng-container>
+
+<ng-template
+  [ngTemplateOutlet]="renderTpl || defaultTpl"
+  [ngTemplateOutletContext]="myContext"
+></ng-template>
+
+<ng-container
+  *ngTemplateOutlet="renderTpl || defaultTpl; context: myContext"
+></ng-container>
+
+<ng-template
+  *ngTemplateOutlet="renderTpl || defaultTpl; context: myContext"
+></ng-template>
+
+<ng-template #defaultTpl let-def let-n="name">
+  <div>
+    <span>一段文字信息 {{ def }} {{ n }}</span>
+  </div>
+</ng-template>
