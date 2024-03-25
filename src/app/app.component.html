@@ -104,7 +104,28 @@
 </app-tpl-content> -->
 
 <!-- ViewChild 与 ViewChildren -->
-<app-view-child></app-view-child>
+<!-- <app-view-child></app-view-child> -->
+
+<!-- ContentChild 与 ContentChildren -->
+<app-content-child>
+  <div #inner>this is inner</div>
+  <div #inner>this is inner</div>
+  <div class="wrapper">
+    <div #inner>this is inner</div>
+    <div #inner>this is inner</div>
+  </div>
+
+  <h2 [appHighlight]="'lime'">Content child 获取指令</h2>
+  <h2 [appHighlight]="'lime'">Content child 获取指令</h2>
+
+  <app-grand-content></app-grand-content>
+  <app-grand-content #grandChild></app-grand-content>
+  <app-grand-content #grandChild></app-grand-content>
+
+  <div>
+    <app-grand-content #grandChild></app-grand-content>
+  </div>
+</app-content-child>
 
 <!-- review -->
 <!-- <app-review></app-review> -->

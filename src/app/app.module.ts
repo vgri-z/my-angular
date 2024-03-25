@@ -25,6 +25,8 @@ import { TplOutletComponent } from './tpl-outlet/tpl-outlet.component';
 import { TplContentComponent } from './tpl-content/tpl-content.component';
 import { ViewChildComponent } from './view-child/view-child.component';
 import { GrandChildComponent } from './view-child/grand-child/grand-child.component';
+import { ContentChildComponent } from './content-child/content-child.component';
+import { GrandContentComponent } from './content-child/grand-content/grand-content.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { GrandChildComponent } from './view-child/grand-child/grand-child.compon
     TplContentComponent,
     ViewChildComponent,
     GrandChildComponent,
+    ContentChildComponent,
+    GrandContentComponent,
   ],
   imports: [
     BrowserModule,
