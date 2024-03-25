@@ -13,7 +13,8 @@ export class HighlightDirective {
   }
   // 处理用户事件 鼠标移入时修改背景色 鼠标移出时回复背景色
   @HostListener('mouseenter', ['$event']) onMouseEnter(event: MouseEvent) {
-    console.log(event);
+    // console.log(event);
+    console.log(this.vgriColor);
     this.highLight(this.appHighlight);
   }
 

@@ -7,8 +7,8 @@ import {
   ViewChild,
   ViewChildren,
 } from '@angular/core';
-import { CasualComponent } from '../casual/casual.component';
 import { GrandChildComponent } from './grand-child/grand-child.component';
+import { HighlightDirective } from '../directives/highlight.directive';
 
 @Component({
   selector: 'app-view-child',
@@ -35,6 +35,10 @@ export class ViewChildComponent implements OnInit, AfterViewInit {
     | QueryList<GrandChildComponent>
     | undefined;
 
+  // 获取指令
+  @ViewChild(HighlightDirective, { static: true }) highLight:
+    | HighlightDirective
+    | undefined;
   show = true;
 
   constructor() {
@@ -47,6 +51,9 @@ export class ViewChildComponent implements OnInit, AfterViewInit {
     // console.log(this.wrapperEl, 'oninti');
     // console.log(this.casualCpn);
     // console.log(this.grandCpn?.name);
+    console.log(this.highLight);
+    // 一开始进入页面的时候，将指令宿主元素的背景色改成lime
+    this.highLight?.highLight('lime');
   }
 
   ngAfterViewInit(): void {
@@ -56,12 +63,11 @@ export class ViewChildComponent implements OnInit, AfterViewInit {
     // console.log(this.grandCpn);
     // this.casualCpn?.printName();
     // console.log(this.wrapperEls);
-    console.log(this.grandCpns?.length);
-    console.log(this.grandCpns?.first);
-    console.log(this.grandChilds);
-
-    this.grandCpns?.changes.subscribe((changes) => {
-      console.log(changes);
-    });
+    // console.log(this.grandCpns?.length);
+    // console.log(this.grandCpns?.first);
+    // console.log(this.grandChilds);
+    // this.grandCpns?.changes.subscribe((changes) => {
+    //   console.log(changes);
+    // });
   }
 }
