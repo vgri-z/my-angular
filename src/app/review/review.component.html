@@ -1,0 +1,39 @@
+<p-button label="insert second" (click)="insert(secondTpl)"></p-button>
+<p-button label="insert third" (onClick)="insert(thirdTpl)"></p-button>
+<p-button label="insert fourth" (click)="insert(fourthTpl)"></p-button>
+<p-button label="insert all" (click)="insertAll()"></p-button>
+<p-button label="get one" (click)="getOne()"></p-button>
+<p-button label="insert free" (click)="insertFree()"> </p-button>
+<p-button label="get index" (click)="getIndex()"> </p-button>
+<p-button label="move" (click)="move()"></p-button>
+<p-button label="move2To4" (click)="move2To4()"></p-button>
+<p-button label="move2ToCasual" (click)="move2ToCasual()"></p-button>
+<h2>templateRef length: {{ firstContain?.length }}</h2>
+
+<ng-template #firstTpl let-def let-a="age">
+  <h3>第一段模板内容1</h3>
+  <h3>第一段模板内容2</h3>
+  <h3>{{ def }}--{{ a }}</h3>
+</ng-template>
+
+<div #divBox></div>
+
+<ng-template #secondTpl>
+  <h3>第二段模板内容</h3>
+</ng-template>
+
+<ng-template #thirdTpl>
+  <h3>第三段模板内容</h3>
+</ng-template>
+
+<ng-template #fourthTpl>
+  <h3>第四段模板内容</h3>
+</ng-template>
+
+<ng-template #freeTpl>
+  <h3>自由的模板内容</h3>
+</ng-template>
+
+<ng-container #firstContainer> </ng-container>
+<div>-------------------------------------------</div>
+<ng-container #secondContainer> </ng-container>
