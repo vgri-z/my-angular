@@ -12,4 +12,6 @@ export class TplOutletComponent {
     $implicit: 'default-value',
     name: 'vgri',
   };
+
+  show = false;
 }
