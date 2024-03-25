@@ -1,0 +1,16 @@
+<div class="view-child">
+  <div class="wrapper" #wrapper>thih is wrapper</div>
+  <div class="wrapper" #wrapper>thih is wrapper</div>
+  <div class="wrapper" #wrapper>thih is wrapper</div>
+  <div class="wrapper" #wrapper>thih is wrapper</div>
+
+  <hr />
+
+  <p-button label="toggle" (click)="show = !show"></p-button>
+  <app-grand-child></app-grand-child>
+  <app-grand-child #grandChild></app-grand-child>
+  <app-grand-child #grandChild></app-grand-child>
+  <app-grand-child #grandChild></app-grand-child>
+  <app-grand-child #grandChild></app-grand-child>
+  <app-grand-child *ngIf="show" #grandChild></app-grand-child>
+</div>

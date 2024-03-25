@@ -22,6 +22,9 @@ import { ReviewDirective } from './directives/review.directive';
 import { UnlessDirective } from './directives/unless.directive';
 import { TplContainerComponent } from './tpl-container/tpl-container.component';
 import { TplOutletComponent } from './tpl-outlet/tpl-outlet.component';
+import { TplContentComponent } from './tpl-content/tpl-content.component';
+import { ViewChildComponent } from './view-child/view-child.component';
+import { GrandChildComponent } from './view-child/grand-child/grand-child.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,9 @@ import { TplOutletComponent } from './tpl-outlet/tpl-outlet.component';
     UnlessDirective,
     TplContainerComponent,
     TplOutletComponent,
+    TplContentComponent,
+    ViewChildComponent,
+    GrandChildComponent,
   ],
   imports: [
     BrowserModule,
