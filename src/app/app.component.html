@@ -107,7 +107,7 @@
 <!-- <app-view-child></app-view-child> -->
 
 <!-- ContentChild 与 ContentChildren -->
-<app-content-child>
+<!-- <app-content-child>
   <div #inner>this is inner</div>
   <div #inner>this is inner</div>
   <div class="wrapper">
@@ -125,7 +125,36 @@
   <div>
     <app-grand-content #grandChild></app-grand-content>
   </div>
-</app-content-child>
+</app-content-child> -->
+
+<!-- 有条件的内容投影 -->
+<!-- <app-example-zippy>
+  <ng-template #temTpl>
+    <h3>It depends on what you do with it.</h3>
+  </ng-template>
+  <h2 #title>this is h2</h2>
+  <app-review-casual></app-review-casual>
+</app-example-zippy> -->
+
+<!-- 管道 -->
+<app-vgri-pipe></app-vgri-pipe>
 
 <!-- review -->
-<!-- <app-review></app-review> -->
+<!-- <app-review>
+  <h2 class="header" #title>this is header</h2>
+
+  <div class="body">
+    <h2 #title>this is body</h2>
+    <app-review-casual></app-review-casual>
+    <app-review-casual></app-review-casual>
+    <app-review-casual></app-review-casual>
+    <h3 [appHighlight]="'yellow'">this is directive</h3>
+    <app-review-casual #reviewCasual></app-review-casual>
+    <app-review-casual #reviewCasual></app-review-casual>
+  </div>
+
+  <app-review-casual #reviewCasual></app-review-casual>
+
+  <h2 class="footer" #title>this is footer</h2>
+  <h3 [appHighlight]="'yellow'">this is directive</h3>
+</app-review> -->

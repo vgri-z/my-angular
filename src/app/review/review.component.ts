@@ -1,95 +1,60 @@
 import {
   AfterViewInit,
   Component,
+  ContentChild,
+  ContentChildren,
   ElementRef,
-  EmbeddedViewRef,
-  TemplateRef,
-  ViewChild,
-  ViewContainerRef,
-  ViewRef,
+  OnInit,
+  QueryList,
 } from '@angular/core';
+import { ReviewCasualComponent } from './review-casual/review-casual.component';
+import { HighlightDirective } from '../directives/highlight.directive';
 
 @Component({
   selector: 'app-review',
   templateUrl: './review.component.html',
   styleUrl: './review.component.less',
 })
-export class ReviewComponent implements AfterViewInit {
-  @ViewChild('divBox') readonly divBox: ElementRef<HTMLElement> | undefined;
-  @ViewChild('firstTpl', { read: TemplateRef }) readonly firstTpl:
-    | TemplateRef<any>
+export class ReviewComponent implements OnInit, AfterViewInit {
+  // ContentChild获取目标的话，若名称相同，只会获取到第一个
+  @ContentChild('title', { static: true }) titleEl: ElementRef | undefined;
+  @ContentChild(ReviewCasualComponent, { static: true }) rc:
+    | ReviewCasualComponent
     | undefined;
-  @ViewChild('secondTpl', { read: TemplateRef }) readonly secondTpl:
-    | TemplateRef<any>
+  @ContentChild(HighlightDirective, { static: true }) highLight:
+    | HighlightDirective
     | undefined;
-  @ViewChild('thirdTpl', { read: TemplateRef }) readonly thirdTpl:
-    | TemplateRef<any>
+  @ContentChild('reviewCasual', { static: true }) rcasual:
+    | ReviewCasualComponent
     | undefined;
-  @ViewChild('fourthTpl', { read: TemplateRef }) readonly fourthTpl:
-    | TemplateRef<any>
+  @ContentChildren('title', { descendants: true }) titleEls:
+    | QueryList<ElementRef>
     | undefined;
-  @ViewChild('firstContainer', { read: ViewContainerRef, static: true })
-  readonly firstContain: ViewContainerRef | undefined;
-  @ViewChild('secondContainer', { read: ViewContainerRef, static: true })
-  readonly secondContainer: ViewContainerRef | undefined;
-  @ViewChild('freeTpl', { read: TemplateRef }) readonly freeTpl:
-    | TemplateRef<any>
+  @ContentChildren(HighlightDirective, { descendants: true }) hls:
+    | QueryList<HighlightDirective>
+    | undefined;
+  @ContentChildren(ReviewCasualComponent, { descendants: true }) rcs:
+    | QueryList<ReviewCasualComponent>
+    | undefined;
+  @ContentChildren('reviewCasual', { descendants: true }) rcasuals:
+    | QueryList<ReviewCasualComponent>
     | undefined;
 
-  freeViewRef: EmbeddedViewRef<any> | undefined;
+  ngOnInit(): void {
+    // console.log(this.titleEl);
+    // console.log(this.rc);
+    // this.rc?.sayHello();
+    // this.highLight?.highLight('lime');
+    console.log(this.rcasual);
+  }
 
   ngAfterViewInit(): void {
-    this.freeViewRef = this.freeTpl?.createEmbeddedView({});
-    const viewRef = this.firstTpl?.createEmbeddedView(null);
-    // const nodes = viewRef?.rootNodes;
-    // nodes?.forEach((item: HTMLElement) => {
-    //   this.divBox?.nativeElement.appendChild(item);
-    // });
-    setTimeout(() => {
-      this.firstContain?.createEmbeddedView(this.firstTpl!, {
-        $implicit: 'vgri',
-        age: 18,
-      });
-    });
-    // this.firstContain?.insert(viewRef as ViewRef);
-  }
-
-  insert(tpl: TemplateRef<any>) {
-    this.firstContain?.createEmbeddedView(tpl);
-  }
-
-  insertAll() {
-    [this.secondTpl, this.thirdTpl, this.fourthTpl].forEach((item) => {
-      this.firstContain?.createEmbeddedView(item!);
-    });
-  }
-
-  getOne() {
-    const getTpl = this.firstContain?.get(2);
-    console.log(getTpl);
-  }
-
-  insertFree() {
-    this.firstContain?.insert(this.freeViewRef!);
-  }
-
-  getIndex() {
-    const index = this.firstContain?.indexOf(this.freeViewRef!);
-    console.log(index);
-  }
-
-  move() {
-    const temTpl = this.firstContain?.detach(0);
-    this.firstContain?.move(temTpl!, 3);
-  }
-
-  move2To4() {
-    const temTpl = this.firstContain?.detach(1);
-    this.firstContain?.move(temTpl!, 3);
-  }
-
-  move2ToCasual() {
-    const temTpl = this.firstContain?.detach(1);
-    this.secondContainer?.insert(temTpl!);
+    // console.log(this.titleEl);
+    // console.log(this.rc);
+    // console.log(this.titleEls);
+    // console.log(this.hls?.length);
+    // console.log(this.rcs);
+    console.log(this.rcasual);
+    console.log(this.rcasuals);
   }
 }

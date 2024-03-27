@@ -1,0 +1,45 @@
+<div class="vgri-pipe">
+  <ul>
+    <li *ngFor="let item of person | keyvalue">
+      {{ item.key }}: {{ item.value }}
+    </li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let item of map | keyvalue">
+      {{ item.key }}: {{ item.value }}
+    </li>
+  </ul>
+</div>
+
+<!-- 指数级转换管道使用 -->
+<div class="pipe1">
+  <div style="margin-bottom: 10px">
+    底数：<p-inputNumber inputId="integeronly" [(ngModel)]="num">
+    </p-inputNumber>
+  </div>
+
+  <div>
+    指数：<p-inputNumber inputId="integeronly" [(ngModel)]="exponent">
+    </p-inputNumber>
+  </div>
+
+  <h3>结果：{{ num | exponentialStrength : exponent }}</h3>
+</div>
+
+<!-- 非纯管道的使用 -->
+<div class="pipe2">
+  <div class="input">
+    <input
+      type="text"
+      pInputText
+      [(ngModel)]="personName"
+      (keyup.enter)="addPerson()"
+    />
+    <p-button label="reset" (click)="reset()"></p-button>
+  </div>
+
+  <div *ngFor="let person of persons | flyingHeroes">
+    {{ person.name }}
+  </div>
+</div>

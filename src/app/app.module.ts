@@ -13,6 +13,7 @@ import { IfComponent } from './if/if.component';
 import { SwitchComponent } from './switch/switch.component';
 import { ForComponent } from './for/for.component';
 import { InputTextModule } from 'primeng/inputtext';
+import { InputNumberModule } from 'primeng/inputnumber';
 import { TplVarComponent } from './tpl-var/tpl-var.component';
 import { TplOperatorsComponent } from './tpl-operators/tpl-operators.component';
 import { HighlightDirective } from './directives/highlight.directive';
@@ -27,6 +28,12 @@ import { ViewChildComponent } from './view-child/view-child.component';
 import { GrandChildComponent } from './view-child/grand-child/grand-child.component';
 import { ContentChildComponent } from './content-child/content-child.component';
 import { GrandContentComponent } from './content-child/grand-content/grand-content.component';
+import { ReviewCasualComponent } from './review/review-casual/review-casual.component';
+import { ExampleZippyComponent } from './example-zippy/example-zippy.component';
+import { ZippyContentDirective } from './directives/example-zippy-content.directive';
+import { VgriPipeComponent } from './vgri-pipe/vgri-pipe.component';
+import { ExponentialStrengthPipe } from './pipe/exponential-strength.pipe';
+import { FlyingHeroesPipe } from './pipe/flying-heroes.pipe';
 
 @NgModule({
   declarations: [
@@ -50,6 +57,12 @@ import { GrandContentComponent } from './content-child/grand-content/grand-conte
     GrandChildComponent,
     ContentChildComponent,
     GrandContentComponent,
+    ReviewCasualComponent,
+    ExampleZippyComponent,
+    ZippyContentDirective,
+    VgriPipeComponent,
+    ExponentialStrengthPipe,
+    FlyingHeroesPipe,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +72,7 @@ import { GrandContentComponent } from './content-child/grand-content/grand-conte
     BrowserAnimationsModule,
     FormsModule,
     InputTextModule,
+    InputNumberModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,7 @@
+<!-- <ng-container [ngTemplateOutlet]="content.templateRef"></ng-container> -->
+<p-button label="toggle" (click)="expanded = !expanded"></p-button>
+<div *ngIf="expanded" [id]="contentId">
+  <ng-container [ngTemplateOutlet]="temTpl!"></ng-container>
+  <ng-container [ngTemplateOutlet]="temTpl!"></ng-container>
+  <ng-container [ngTemplateOutlet]="temTpl!"></ng-container>
+</div>
