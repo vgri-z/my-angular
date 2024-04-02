@@ -1,0 +1,10 @@
+<div class="change-first">
+  <h3>change first</h3>
+  <br />
+  <strong>age: {{ age }}</strong>
+  <br />
+  <strong>title: {{ title }}</strong>
+  <br />
+  <p-button label="change job" (click)="job = 'teacher'"></p-button>
+  <app-change-second [job]="job"></app-change-second>
+</div>

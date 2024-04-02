@@ -1,0 +1,9 @@
+<div class="change-detection">
+  <h2>change detection</h2>
+  <div>
+    <strong>person name: {{ personName }}</strong>
+  </div>
+  <p-button label="changetitle" (click)="title = 'change title'"></p-button>
+  <!-- <app-change-first (changeName)="personName = 'vae'"></app-change-first> -->
+  <app-change-first [title]="title"></app-change-first>
+</div>

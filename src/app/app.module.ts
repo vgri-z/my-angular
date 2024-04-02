@@ -34,6 +34,10 @@ import { ZippyContentDirective } from './directives/example-zippy-content.direct
 import { VgriPipeComponent } from './vgri-pipe/vgri-pipe.component';
 import { ExponentialStrengthPipe } from './pipe/exponential-strength.pipe';
 import { FlyingHeroesPipe } from './pipe/flying-heroes.pipe';
+import { LifeCycleComponent } from './life-cycle/life-cycle.component';
+import { ChangeDetectionComponent } from './change-detection/change-detection.component';
+import { ChangeFirstComponent } from './change-detection/change-first/change-first.component';
+import { ChangeSecondComponent } from './change-detection/change-second/change-second.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +67,10 @@ import { FlyingHeroesPipe } from './pipe/flying-heroes.pipe';
     VgriPipeComponent,
     ExponentialStrengthPipe,
     FlyingHeroesPipe,
+    LifeCycleComponent,
+    ChangeDetectionComponent,
+    ChangeFirstComponent,
+    ChangeSecondComponent,
   ],
   imports: [
     BrowserModule,
