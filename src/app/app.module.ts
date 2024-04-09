@@ -40,6 +40,7 @@ import { ChangeFirstComponent } from './change-detection/change-first/change-fir
 import { ChangeSecondComponent } from './change-detection/change-second/change-second.component';
 import { CpnStyleComponent } from './cpn-style/cpn-style.component';
 import { AlertComponent } from './alert/alert.component';
+import { AlertWrapperComponent } from './alert-wrapper/alert-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { AlertComponent } from './alert/alert.component';
     ChangeSecondComponent,
     CpnStyleComponent,
     AlertComponent,
+    AlertWrapperComponent,
   ],
   imports: [
     BrowserModule,
