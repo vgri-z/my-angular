@@ -38,6 +38,8 @@ import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { ChangeDetectionComponent } from './change-detection/change-detection.component';
 import { ChangeFirstComponent } from './change-detection/change-first/change-first.component';
 import { ChangeSecondComponent } from './change-detection/change-second/change-second.component';
+import { CpnStyleComponent } from './cpn-style/cpn-style.component';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,8 @@ import { ChangeSecondComponent } from './change-detection/change-second/change-s
     ChangeDetectionComponent,
     ChangeFirstComponent,
     ChangeSecondComponent,
+    CpnStyleComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,

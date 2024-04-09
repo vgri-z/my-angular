@@ -1,0 +1,25 @@
+.cpn-style {
+  width: 400px;
+  height: 400px;
+  background-color: aquamarine;
+}
+
+:host {
+  // 只针对宿主元素自身
+  font-style: italic;
+}
+
+:host(.active) {
+  // 只针对宿主元素并且宿主元素的class有active这个类，需要在父组件中添加这个类
+  color: #f40;
+}
+
+:host h2 {
+  // 针对宿主元素的h2子元素
+  background-color: bisque;
+}
+
+:host-context(.theme-border) .border {
+  // 从当前组件的宿主元素一直向上查找，直到查找到某个父节点拥有theme-border这个class 作用与这个父节点下的有border类的元素
+  border: 3px solid red;
+}
