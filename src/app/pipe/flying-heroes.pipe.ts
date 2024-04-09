@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { IPerson } from '../vgri-pipe/vgri-pipe.component';
+import { IPerson } from '../components/vgri-pipe/vgri-pipe.component';
 
 @Pipe({
   name: 'flyingHeroes',
