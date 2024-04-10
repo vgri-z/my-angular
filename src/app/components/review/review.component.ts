@@ -1,60 +1,46 @@
-import {
-  AfterViewInit,
-  Component,
-  ContentChild,
-  ContentChildren,
-  ElementRef,
-  OnInit,
-  QueryList,
-} from '@angular/core';
+import { Component, ComponentRef, ViewContainerRef } from '@angular/core';
 import { ReviewCasualComponent } from './review-casual/review-casual.component';
-import { HighlightDirective } from '../directives/highlight.directive';
 
 @Component({
   selector: 'app-review',
   templateUrl: './review.component.html',
   styleUrl: './review.component.less',
 })
-export class ReviewComponent implements OnInit, AfterViewInit {
-  // ContentChild获取目标的话，若名称相同，只会获取到第一个
-  @ContentChild('title', { static: true }) titleEl: ElementRef | undefined;
-  @ContentChild(ReviewCasualComponent, { static: true }) rc:
-    | ReviewCasualComponent
-    | undefined;
-  @ContentChild(HighlightDirective, { static: true }) highLight:
-    | HighlightDirective
-    | undefined;
-  @ContentChild('reviewCasual', { static: true }) rcasual:
-    | ReviewCasualComponent
-    | undefined;
-  @ContentChildren('title', { descendants: true }) titleEls:
-    | QueryList<ElementRef>
-    | undefined;
-  @ContentChildren(HighlightDirective, { descendants: true }) hls:
-    | QueryList<HighlightDirective>
-    | undefined;
-  @ContentChildren(ReviewCasualComponent, { descendants: true }) rcs:
-    | QueryList<ReviewCasualComponent>
-    | undefined;
-  @ContentChildren('reviewCasual', { descendants: true }) rcasuals:
-    | QueryList<ReviewCasualComponent>
-    | undefined;
+export class ReviewComponent {
+  private container: ReviewCasualComponent | undefined;
+  private componentRef: ComponentRef<ReviewCasualComponent> | undefined;
 
-  ngOnInit(): void {
-    // console.log(this.titleEl);
-    // console.log(this.rc);
-    // this.rc?.sayHello();
-    // this.highLight?.highLight('lime');
-    console.log(this.rcasual);
+  constructor(private containerRef: ViewContainerRef) {}
+
+  showMessage() {
+    if (!this.container) {
+      this.container = this.getContainer();
+    }
+    const option = {
+      message: '动态组件创建成功',
+      type: 'danger',
+    };
+    this.container.setOptions(option);
   }
 
-  ngAfterViewInit(): void {
-    // console.log(this.titleEl);
-    // console.log(this.rc);
-    // console.log(this.titleEls);
-    // console.log(this.hls?.length);
-    // console.log(this.rcs);
-    console.log(this.rcasual);
-    console.log(this.rcasuals);
+  getContainer(): ReviewCasualComponent {
+    this.componentRef =
+      this.containerRef.createComponent<ReviewCasualComponent>(
+        ReviewCasualComponent
+      );
+
+    // 监听组件的销毁
+    this.componentRef.onDestroy(() => {
+      console.log('cpn destroy');
+    });
+
+    const { instance } = this.componentRef;
+
+    instance.close.subscribe(() => {
+      this.componentRef?.destroy();
+      this.container = undefined;
+    });
+
+    return instance;
   }
 }

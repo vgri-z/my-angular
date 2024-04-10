@@ -1,1 +1,4 @@
-<p>review-casual works!</p>
+<div [class]="alertClass">
+  <div class="content">{{ options.message }}</div>
+  <div class="close" (click)="close.emit()">X</div>
+</div>
