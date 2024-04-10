@@ -1,0 +1,9 @@
+<ng-template
+  ngFor
+  let-item
+  [ngForOf]="persons"
+  let-num="count"
+  let-index="index"
+>
+  <div>{{ index + 1 }}-{{ num }}-{{ item.name }}-{{ item.age }}</div>
+</ng-template>
