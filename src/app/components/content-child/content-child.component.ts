@@ -7,7 +7,7 @@ import {
   QueryList,
 } from '@angular/core';
 import { GrandContentComponent } from './grand-content/grand-content.component';
-import { HighlightDirective } from '../directives/highlight.directive';
+import { HighlightDirective } from '../../directives/highlight.directive';
 
 @Component({
   selector: 'app-content-child',

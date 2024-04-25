@@ -5,8 +5,8 @@ import {
   ElementRef,
   TemplateRef,
 } from '@angular/core';
-import { ZippyContentDirective } from '../directives/example-zippy-content.directive';
 import { ReviewCasualComponent } from '../review/review-casual/review-casual.component';
+import { ZippyContentDirective } from '../../directives/example-zippy-content.directive';
 
 @Component({
   selector: 'app-example-zippy',

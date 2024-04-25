@@ -8,7 +8,7 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { GrandChildComponent } from './grand-child/grand-child.component';
-import { HighlightDirective } from '../directives/highlight.directive';
+import { HighlightDirective } from '../../directives/highlight.directive';
 
 @Component({
   selector: 'app-view-child',

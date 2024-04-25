@@ -15,7 +15,7 @@ export class UnlessDirective {
   @Input() set appUnless(condition: boolean) {
     this._context.$implicit = this._context.appUnless = condition;
     this._context.name = 'vgri';
-    console.log(this._context);
+    // console.log(this._context);
     if (!condition && !this.hasView) {
       // this.viewContainerRef.createEmbeddedView(this.templateRef, {
       //   $implicit: condition,

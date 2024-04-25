@@ -4,6 +4,7 @@ import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 @NgModule({
   declarations: [],
@@ -13,7 +14,14 @@ import { InputTextModule } from 'primeng/inputtext';
     InputTextModule,
     InputNumberModule,
     DialogModule,
+    RadioButtonModule,
   ],
-  exports: [ButtonModule, InputTextModule, InputNumberModule, DialogModule],
+  exports: [
+    ButtonModule,
+    InputTextModule,
+    InputNumberModule,
+    DialogModule,
+    RadioButtonModule,
+  ],
 })
 export class ShareModule {}

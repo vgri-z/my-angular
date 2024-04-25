@@ -1,5 +1,5 @@
 <!--
-  TemplateRef是一个内嵌模板，用于实例化内前视图
+  TemplateRef是一个内嵌模板，用于实例化内嵌视图
   EmbeddedViewRef是一个视图对象，可以将其添加到视图容器当中
   ViewCOntainerRef是一个视图容器，这里面可以有视图，也可以有其他的视图容器
  -->
@@ -45,4 +45,4 @@
 <ng-container #secondContainer></ng-container>
 
 <p-button label="toggle" (click)="show = !show"></p-button>
-<h2 *appReview="show as s; name as n">unless指令复习--{{ s }}--{{ n }}</h2>
+<!-- <h2 *appReview="show as s; name as n">unless指令复习--{{ s }}--{{ n }}</h2> -->
